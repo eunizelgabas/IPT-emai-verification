@@ -68,7 +68,7 @@ class AuthController extends Controller
 
         // dispatch(new CustomerJob($user));
         CustomerJob::dispatch($user);
-        dd('Email has been delivered.');    
+        // dd('Email has been delivered.');    
         // Mail::send('auth.verification-mail', ['user'=>$user], function($mail) use($user){
         //     $mail->to($user->email);
         //     $mail->subject('Account Verification');
