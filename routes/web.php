@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\MedicineController;
 use Illuminate\Queue\Jobs\Job;
 
 /*
@@ -28,7 +29,12 @@ Route::middleware(['auth','verified'])->group (function(){
 
     Route::get('/dashboard', [AuthController::class, 'dashboard']);
 
-
+    Route::get('/medicine', [MedicineController::class, 'index'])->name('medicine.index');
+    Route::get('/medicine/create', [MedicineController::class, 'create'])->name('medicine.create');
+    Route::post('/medicine', [MedicineController::class, 'store']);
+    Route::get('/medicine/edit', [MedicineController::class, 'edit'])->name('medicine.edit');
+    Route::put('/medicine', [MedicineController::class, 'update']);
+    Route::delete('/medicine', [MedicineController::class, 'delete']);
 });
 
 

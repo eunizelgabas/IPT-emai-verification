@@ -1,6 +1,6 @@
-@extends('base')
+    @extends('base')
 
-@section('content')
+    @section('content')
 
     <div class="container col-md-6 offset-md-3 mt-5">
         <h1 class="text-center">Welcome</h1>
