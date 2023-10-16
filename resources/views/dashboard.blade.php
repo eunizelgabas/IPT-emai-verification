@@ -2,30 +2,32 @@
 
 @include('_navbar')
 @section('content')
-    
-  <body>
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col-md-12" >
-          <h1>Categories</h1>
-          <table class="table table-bordered">
-            <thead style="background-color: #BFACE0">
-              <tr>
-                <th>Category ID</th>
-                <th>Category Name</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>     
-              </tr>   
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div> 
-  </body>
+
+<div class="container">
+
+    <h1 class="text-center mt-2">Hello, {{$user->name}}</h1>
+
+    <h2>All Registered Users</h2>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+
+          </tr>
+        </thead>
+        <tbody>
+            @foreach ($regUser as $user)
+                <tr>
+                    <th scope="row">{{ $user->id }}</th>
+                    <td>{{$user->name}}</td>
+                    <td>{{$user->email}}</td>
+
+                </tr>
+          @endforeach
+        </tbody>
+      </table>
+
+</div>
 @endsection

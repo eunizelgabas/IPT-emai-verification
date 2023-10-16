@@ -21,7 +21,7 @@ class CustomerJob implements ShouldQueue
      */
 
      private $user;
-    public function __construct( 
+    public function __construct(
         $user
     )
     {
@@ -40,6 +40,6 @@ class CustomerJob implements ShouldQueue
         //     Mail::to($foundUser->email)->send(new SendMailable($foundUser));
         // }
         Mail::to($this->user->email)->send(new SendMailable($this->user));
-      
+
     }
 }
